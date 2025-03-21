@@ -26,6 +26,11 @@ int main()
         cout<<countChar[c]<<endl;
     }
 
+    for(auto ele : countChar)
+    {
+        cout<<ele.second;
+    }
+
     return 0;
 }
 

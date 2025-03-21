@@ -24,11 +24,34 @@ void selectoin_sort(int *arr,int s)
 
 }
 
+void bubbleSort(int *arr,int s)
+{
+    for(int i = 0;i<s;i++)
+    {
+        int  ifswap =0;
+        for(int j=0;j<=s-1-i;j++){
+            if(arr[j]>arr[j+1])
+            {
+                swap(arr[j],arr[j+1]);
+                ifswap =1;
+            }
+
+        }
+        if(ifswap == 0){
+            cout<<"already sorted\n";
+            return;
+        }
+    }
+
+}
 
 int main()
 {
     int arr[] = {43,23,24,52,5,1};
-    selectoin_sort(arr,6);
+    
+    bubbleSort(arr,6);
+    //selectoin_sort(arr,6);
+    
     for(int i=0;i<6;i++){
         cout<<arr[i]<<" ";
     }

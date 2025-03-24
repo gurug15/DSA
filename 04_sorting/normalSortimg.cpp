@@ -11,9 +11,9 @@ void swap(int& a,int &b)
 
 void selectoin_sort(int *arr,int s)
 {
-    for(int i=0;i<=s-2;i++){
+    for(int i=0;i<s-1;i++){
         int min = i;
-        for(int j=i;j<=s-1;j++){
+        for(int j=i;j<s;j++){
             if(arr[j]<arr[min])
             {
                 min = j;
@@ -22,6 +22,20 @@ void selectoin_sort(int *arr,int s)
         swap(arr[min],arr[i]);
     }
 
+}
+
+void insertion_sort(int *arr,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int j=i;
+        while(j>0 && arr[j-1]>arr[j])
+        {
+            swap(arr[j-1],arr[j]);
+            j--;
+        }
+
+    }
 }
 
 void bubbleSort(int *arr,int s)
@@ -38,7 +52,7 @@ void bubbleSort(int *arr,int s)
 
         }
         if(ifswap == 0){
-            cout<<"already sorted\n";
+            cout<<"already sorted\n"; //makes the best complixity as O(N);
             return;
         }
     }
@@ -49,7 +63,8 @@ int main()
 {
     int arr[] = {43,23,24,52,5,1};
     
-    bubbleSort(arr,6);
+    insertion_sort(arr,6);
+    //bubbleSort(arr,6);
     //selectoin_sort(arr,6);
     
     for(int i=0;i<6;i++){

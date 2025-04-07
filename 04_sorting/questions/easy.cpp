@@ -30,16 +30,49 @@ class Solution {
     }
     return true;
     }
+    int removeDuplicates(vector<int>& nums) {
+        for(int i=0;i<nums.size()-1;i++){
+            if(nums[i]==nums[i+1]){
+                nums.erase(nums.begin()+i+1);
+                i=i-1;
+            }
+        }
+
+        return nums.size();
+    }
+    void reverse(vector<int> &nums,int start,int end)
+    {
+        while(start<end){
+            swap(nums[start],nums[end]);
+            start++;
+            end--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        k = k%nums.size();
+        // for(int i=0;i<k;i++)
+        // {
+        //     int temp = nums[nums.size()-1];
+        //     for(int j=nums.size()-1;j>0;j--){
+        //         nums[j]=nums[j-1];
+        //     }
+        //     nums[0] = temp;
+        // }
+        reverse(nums,0,nums.size()-1);
+        reverse(nums,0,k-1);
+        reverse(nums,k,nums.size()-1);
+    }
 };
 
 
 int main(){ 
     vector<int> a = {3,4,5,1,2};
     Solution s;
-    //cout<<a.size();
-    //cout<<s.isSorted(4,a)<<endl;
-    cout<<s.check(a);
-
+    s.rotate(a,3);
+    for(int x: a)
+    {
+        cout<<x<<" ";
+    }
     return 0;
 }
 

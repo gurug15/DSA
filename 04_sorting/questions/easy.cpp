@@ -62,13 +62,60 @@ class Solution {
         reverse(nums,0,k-1);
         reverse(nums,k,nums.size()-1);
     }
+    // void moveZeroes(vector<int>& nums) {
+        
+    //     if(nums.size()<2){
+    //         return;
+    //     }
+
+    //     // if(nums.size()=)
+        
+    //     int j = nums.size()-1;
+
+    //     for(int i=0;i<nums.size()-1;i++){
+    //         cout << i << " " << j << " " << nums[i] << endl;
+    //         if(nums[i]!=0){
+    //             continue;        
+    //         }
+    //         if(nums[j]==0){
+    //             j--;
+                
+    //         }
+    //         if(i<j){
+    //         swap(nums[i],nums[j]);
+    //         }
+    //     }
+
+    //     sort(nums.begin(),nums.begin()+j);
+
+    // }
+    void moveZeroes(vector<int>& nums) {
+        
+        if(nums.size()<2){
+            return;
+        }
+        
+        int j = 0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=0){
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        sort(nums.begin(),nums.begin()+j);
+        for(int i=j;i<nums.size();i++){
+            nums[i] = 0;
+        }
+        cout<<j<<endl;
+    
+    }
 };
 
 
 int main(){ 
-    vector<int> a = {3,4,5,1,2};
+    vector<int> a = {0,1,1,3,12};
     Solution s;
-    s.rotate(a,3);
+    s.moveZeroes(a);
     for(int x: a)
     {
         cout<<x<<" ";

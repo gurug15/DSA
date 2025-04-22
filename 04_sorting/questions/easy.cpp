@@ -94,7 +94,7 @@ class Solution {
         if(nums.size()<2){
             return;
         }
-        
+        //slow and fast two pointers
         int j = 0;
         for(int i=0;i<nums.size();i++){
             if(nums[i]!=0){

@@ -111,6 +111,25 @@ class Solution {
     }
 };
 
+int singleNumber(vector<int>& nums) {
+    
+    if(nums.size()%2==0){
+        return 0;
+    }
+
+    map<int,int> twice;
+
+    for(int i=0;i<nums.size();i++){
+        twice[nums[i]]++;
+    }
+
+    for(auto i: twice){
+        if(i.second !=2){
+            return i.first;
+        }
+    }
+}
+
 
 int findMaxConsecutiveOnes(vector<int>& nums) {
         int count =0;

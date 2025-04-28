@@ -37,6 +37,8 @@ vector<int> optimalUnion(vector<int>arr1,vector<int>arr2){
             ans.push_back(arr1[i]);
         }
         i++;
+        // vector<int>arr1  = {1,2,3,4,5,6,7,8,9,10};
+        // vector<int>arr2= {2,3,4,4,5,11,12};
        }
        else {
         if(ans.size()==0 || ans.back() != arr2[j]){

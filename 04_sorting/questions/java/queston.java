@@ -48,7 +48,7 @@ public class Question1 {
 		int i = 0;
 		int sum = 0;
 		int maxLength = 0;
-		int count =0;
+		int count =null;
 		for(int j =0;j<nums.length;j++) {
 			sum = sum + nums[j];
 			count++;

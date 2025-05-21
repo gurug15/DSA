@@ -96,9 +96,9 @@ public class RotatedSearch33 {
     }
 	
 	
+	
 	public static void main(String[] args) {
 		int arr[] = new int[] {3,5,1};
-//		System.out.println(binarySearch(arr, 0, arr.length - 1 , 10));
 		System.out.println("drop index: "+  findDrop(arr));
 		System.out.println("num at index : " +search(arr, 1));
 		System.out.println("num at index Optimal : " +searchOptimal(arr, 1));

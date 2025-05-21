@@ -18,7 +18,7 @@ using namespace std;
 
 int main(){
     vector<vector<int>> arr = {{1,3},{2,6},{8,10},{15,18}};
-    for (auto ele : merge(arr)) { 
+    for (auto ele : merge(arr)) {
     cout << ele[0] << " " << ele[1] << endl;
     }
 

@@ -2,8 +2,26 @@ package com.questions.mid;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ReverseWords {
+	
+	public String frequencySort(String s) {
+        HashMap<Character,Integer> mpp = new HashMap<>();
+        
+        for(int i=0;i<s.length();i++){        
+        }
+        int max = 0;
+        for(Map.Entry<Character, Integer> entry: mpp.entrySet()) {
+        	max = Math.max(max, entry.getValue());
+        }
+        char []letters = new char[max +1];
+        for(Map.Entry<Character, Integer> entry: mpp.entrySet()) {
+        	letters[entry.getValue()] = entry.getKey(); 
+        }
+        
+        return "hello";
+    }
 	
 	public void reverse(String[] words) {
 		int start = 0;

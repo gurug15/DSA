@@ -1,26 +1,60 @@
 package com.questions.mid;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ReverseWords {
 	
+	public class CharCount{
+		public Integer count;
+		public Character c;
+		
+		
+	
+		public CharCount(Integer count, Character c) {
+			super();
+			this.count = count;
+			this.c = c;
+		}
+
+
+
+		@Override
+		public String toString() {
+			return " " + count + " "+ c;
+		}
+	}			
+	
 	public String frequencySort(String s) {
-        HashMap<Character,Integer> mpp = new HashMap<>();
+        int arr[] = new int[130];
+        for(int i=0;i<s.length();i++) {
+        	arr[s.charAt(i)]++;
+        }
+      
         
-        for(int i=0;i<s.length();i++){        
+        List<CharCount> charList = new ArrayList<ReverseWords.CharCount>();
+        for(int i=0;i<arr.length;i++) {
+        	if(arr[i] !=0) {
+            	CharCount count  =  new CharCount(arr[i], (char)i);
+            	charList.add(count);
+        	}
         }
-        int max = 0;
-        for(Map.Entry<Character, Integer> entry: mpp.entrySet()) {
-        	max = Math.max(max, entry.getValue());
-        }
-        char []letters = new char[max +1];
-        for(Map.Entry<Character, Integer> entry: mpp.entrySet()) {
-        	letters[entry.getValue()] = entry.getKey(); 
+        Collections.sort(charList,(o1,o2)->o2.count.compareTo(o1.count));
+        System.out.println(charList);
+        StringBuilder sb = new StringBuilder();
+        for(CharCount c: charList) {
+        	int count = c.count;
+        	while(count>0) {
+        		sb.append(c.c);
+        		count--;
+        	}
         }
         
-        return "hello";
+        return sb.toString();
     }
 	
 	public void reverse(String[] words) {
@@ -91,9 +125,8 @@ public class ReverseWords {
 	}
 	
 	public static void main(String[] args) {
-		ReverseWords rw = new ReverseWords();
-		System.out.println(rw.isIsomorphic("badc", "baba"));
-		//System.out.println(rw.largestOddNumber("220"));
+		ReverseWords rv = new ReverseWords();
+		System.out.println(rv.frequencySort("tree"));
 	}
 
 }

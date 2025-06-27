@@ -1,7 +1,10 @@
 package com.questions.mid;
 
-public class A{
+public abstract class A{
 	public void sayHello() {
 		System.out.println(String.class);
 	}
+	
+	
+	public abstract void display();
 }

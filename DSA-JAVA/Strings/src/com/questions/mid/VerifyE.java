@@ -20,4 +20,10 @@ public class VerifyE  extends A{
 	        
 	    }
 
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
